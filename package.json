@@ -1,0 +1,40 @@
+{
+  "name": "dsh-chat-dots",
+  "description": "ChatGPT-style turn dots for the dsh web GUI: a floating vertical column of dots at the left edge of the chat column — one dot per completed Q&A round of the CURRENT conversation (most-recent-10 sliding window), click to jump back to that round, the round in view is highlighted.",
+  "version": "0.2.0",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "types": "./lib/types/client/index.d.ts",
+      "default": "./lib/client.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime"
+      ],
+      "platform": "web"
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-client-runtime": "^0.1.0",
+    "react": "^18.2.0"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "README.zh.md"
+  ],
+  "license": "Apache-2.0"
+}
