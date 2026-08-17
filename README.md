@@ -1,4 +1,4 @@
-Enter file contents here# dsh-chat-dots
+# dsh-chat-dots
 
 ChatGPT-style **turn dots** for the DeepSeek Harness (DSH) web GUI — a permanent plugin.
 
